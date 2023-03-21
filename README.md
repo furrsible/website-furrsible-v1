@@ -50,7 +50,7 @@ import { Images } from '@/components';
 
 ### Commiting updates
 
-Read the [commitlint.config.js] (.commitlint.config.js) file for the commit rules and to determine what type-enum to use based on your update, only commit in lowercase.
+Read the [commitlint.config.js](.commitlint.config.js) file for the commit rules and to determine what type-enum to use based on your update, only commit in lowercase.
 
 ```
 docs: update readme
