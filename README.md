@@ -4,7 +4,6 @@ Clone the repo and run:
 
 ```
 yarn install
-
 ```
 
 ### Development
@@ -45,14 +44,12 @@ TypeScript are pre-configured with custom path mappings. To import components or
 
 ```tsx
 import { Images } from '@/components';
-
 ```
 
 ### Commiting updates
 
-Read the [commitlint.config.js](./commitlint.config.js) file for the commit rules and to determine what type-enum to use based on your update, only commit in lowercase.
+Read the [commitlint.config.js](./commitlint.config.js) file for the commit rules and to determine what type-enum to use based on your update. Always make sure you don't leave and empty commit message and only commit in lowercase.
 
 ```
 docs: update readme
-
 ```
