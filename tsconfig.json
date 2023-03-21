@@ -12,7 +12,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/static/*": ["./static/*"]
+      "@/static/*": ["./static/*"],
+      "@/atoms/*": ["./src/common/components/atoms/index.tsx"],
+      "@/molecules/*": ["./src/common/components/molecules/*"],
+      "@/organism/*": ["./src/common/components/organism/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

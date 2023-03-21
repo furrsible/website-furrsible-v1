@@ -12,7 +12,12 @@
     "es6": true,
     "node": true
   },
-  "plugins": ["react", "jsx-a11y", "prettier", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "prettier",
+    "@typescript-eslint"
+  ],
   "extends": [
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -21,7 +26,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
@@ -47,7 +52,8 @@
         "avoidEscape": true
       }
     ],
-    "@typescript-eslint/no-unused-vars": [2, { "argsIgnorePattern": "^_" }]
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
   },
   "settings": {
     "import/resolver": {
