@@ -3,10 +3,11 @@ import React from 'react';
 type ImageType = {
   src: string;
   alt: string;
+  className?: string;
 };
 
-const Image: React.FC<ImageType> = ({ src, alt }) => {
-  return <img src={src} alt={alt} />;
+const Image: React.FC<ImageType> = ({ src, alt, className, ...rest }) => {
+  return <img src={src} alt={alt} className={className} {...rest} />;
 };
 
 export default Image;

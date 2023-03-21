@@ -1,7 +1,7 @@
 // build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 // ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 // docs: Documentation only changes
-// feat: A new feature
+// feature: A new feature
 // update: Modifying an already existing feature
 // fix: A bug fix
 // perf: A code change that improves performance
@@ -39,9 +39,7 @@ module.exports = {
         `chore`,
         `ci`,
         `docs`,
-        `feat`,
         `feature`,
-        `features`,
         `fix`,
         `perf`,
         `refactor`,
