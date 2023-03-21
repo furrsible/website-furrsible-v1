@@ -1,9 +1,32 @@
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
-  // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
-  // don't need to define it here (just if you need to change the options)
-  plugins: [`gatsby-plugin-pnpm`],
+  siteMetadata: {
+    title: `Furrsible`,
+    siteUrl: `https://www.yourdomain.tld`,
+  },
+
+  plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/common/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `./src/common/images/`,
+      },
+      __key: `images`,
+    },
+    `gatsby-plugin-postcss`,
+  ],
   jsxRuntime: `automatic`,
 };
 

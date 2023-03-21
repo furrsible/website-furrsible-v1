@@ -1,17 +1,16 @@
 {
-  "name": "gatsby-starter-ts",
-  "description": "A TypeScript starter for Gatsby that includes all you need to build amazing projects",
+  "name": "furrsible",
+  "description": "Furrsible Coming soon",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (https://joaopedro.dev)",
-  "license": "MIT",
+  "author": "elizabeth",
   "keywords": [
     "gatsby",
-    "starter",
     "typescript"
   ],
   "scripts": {
-    "start": "gatsby develop",
+    "start": "yarn run develop",
+    "develop": "gatsby develop -p 4078",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -32,10 +31,19 @@
     ]
   },
   "dependencies": {
+    "autoprefixer": "10.4.14",
     "gatsby": "5.7.0",
+    "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-manifest": "^5.8.0",
     "gatsby-plugin-pnpm": "1.2.10",
+    "gatsby-plugin-postcss": "6.8.0",
+    "gatsby-plugin-sharp": "5.8.0",
+    "gatsby-source-filesystem": "5.8.0",
+    "gatsby-transformer-sharp": "5.8.0",
+    "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwindcss": "3.2.7",
     "tsconfig-paths-webpack-plugin": "4.0.1"
   },
   "devDependencies": {
