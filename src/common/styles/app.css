@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 
@@ -7,11 +7,34 @@ html, body {
   -webkit-scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
   background-color: #091314;
-  color: white;
+  color: #F3F1EE;
 }
 
 * {
   box-sizing: border-box;
 }
+
+
+.in-circle {
+  mix-blend-mode: normal;
+  transition: all 1s;
+  animation: 1s cubic-bezier(.25, 1, .30, 1) circle-in-center both;
+}
+
+.in-circle:hover {
+  animation-play-state: running;
+  mix-blend-mode: luminosity;
+}
+
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+
+  to {
+    clip-path: circle(100%);
+  }
+}
+
 
 @tailwind utilities;
