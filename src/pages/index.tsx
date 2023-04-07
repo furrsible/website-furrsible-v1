@@ -1,14 +1,85 @@
+import React, { useEffect, useRef } from 'react';
 import { Header, Image } from '../common/components';
 
+// Images
+import logo from '../common/images/logo.svg';
+import close from '../common/images/close.svg';
 import heroCat from '../common/images/hero/cat.png';
 import heroDog from '../common/images/hero/dog.png';
-
+import bigDog from '../common/images/big-dog.jpg';
+import smallDog from '../common/images/small-dog.jpg';
+import cat from '../common/images/cat.jpg';
+import parrot from '../common/images/parrot.jpg';
 import keepTabsImg from '../common/images/features/petting-a-cat.png.jpg';
 import petProviders from '../common/images/features/checking-a-cat.jpg';
 import petItems from '../common/images/features/pet-items.jpg';
 import petSitting from '../common/images/features/holding-a-bunny.jpg';
 
 export default function Home() {
+  const showModal = useRef<HTMLButtonElement>(null);
+  const secButton = useRef<HTMLButtonElement>(null);
+  const hideModal = useRef<HTMLButtonElement>(null);
+  const registerModal = useRef<HTMLDialogElement>(null);
+  const doneModal = useRef<HTMLDialogElement>(null);
+
+  const setHideModal = () => {
+    const _modal = registerModal?.current;
+    setTimeout(() => {
+      _modal?.close();
+    }, 500);
+  };
+
+  const handleShowModal = () => {
+    const _modal = registerModal?.current;
+    const _hideModal = hideModal?.current;
+    _modal?.showModal();
+    _hideModal?.focus();
+  };
+
+  const handleRegistered = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const _modal = doneModal.current;
+    setHideModal();
+    setTimeout(() => {
+      _modal?.showModal();
+    }, 500);
+  };
+
+  useEffect(() => {
+    const _showModal = showModal?.current;
+    const _hideModal = hideModal?.current;
+    const _secButton = secButton.current;
+    const _modal = registerModal?.current;
+
+    _showModal?.addEventListener(`click`, () => {
+      handleShowModal();
+    });
+
+    _showModal?.addEventListener(`keypress`, (e) => {
+      if (e.code === `Enter`) {
+        handleShowModal();
+      }
+    });
+
+    _secButton?.addEventListener(`click`, () => {
+      handleShowModal();
+    });
+
+    _secButton?.addEventListener(`keypress`, (e) => {
+      if (e.code === `Enter`) {
+        handleShowModal();
+      }
+    });
+
+    _hideModal?.addEventListener(`click`, () => {
+      setHideModal();
+    });
+    _modal?.scroll({
+      top: 0,
+      behavior: `smooth`,
+    });
+  }, []);
+
   return (
     <>
       <Header />
@@ -38,7 +109,10 @@ export default function Home() {
               At Furrsible, we understand that your pets are more than just
               animals - they&apos;re part of your family.
             </h2>
-            <button className="bg-[#11190C] text-[#DAEF15] px-6 py-4 rounded-full text-base font-semibold">
+            <button
+              ref={showModal}
+              className="bg-[#11190C] text-[#DAEF15] px-6 py-4 rounded-full text-base font-semibold"
+            >
               Join our Waitlist
             </button>
           </div>
@@ -143,31 +217,161 @@ export default function Home() {
         </section>
 
         {/* and lot more */}
-        <section className="my-24 text-center">
+        <section className="md:my-24 my-14 text-center">
           <h3 className="italic font-black text-[64px] leading-[70px] text-[#0A1718]">
             and Lots More...
           </h3>
         </section>
 
         {/* CTA */}
-        <section className="my-52 w-8/12 mx-auto">
-          <div className="grid md:grid-cols-2">
-            <></>
-            <div className="order-first md:order-last">
-              <p className="font-semibold text-xl text-[#818C96]">
+        <section className="md:my-52 my-20 lg:w-9/12">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex md:gap-x-8 gap-x-4 w-full">
+              <div className="flex flex-col md:gap-y-8 gap-y-4 mt-10">
+                <Image src={parrot} alt="parrot" className="rounded-3xl" />
+                <Image src={bigDog} alt="big dog" className="rounded-3xl" />
+              </div>
+              <div className="flex flex-col md:gap-y-8 gap-y-4">
+                <Image src={cat} alt="cat" className="rounded-3xl" />
+                <Image src={smallDog} alt="small dog" className="rounded-3xl" />
+              </div>
+            </div>
+            <div className="order-first md:order-last place-self-center">
+              <p className="font-semibold md:text-xl text-base text-[#818C96]">
                 What are you waiting for?
               </p>
-              <h5 className="text-5xl leading-[60px] font-semibold">
+              <h5 className="md:text-5xl md:leading-[60px] text-4xl leading-[44px] font-semibold my-4">
                 Sign up for our waitlist to be the first to know when Furrsible
                 launches!
               </h5>
-              <button className="bg-[#DAEF15] px-5 py-3 rounded-full text-[#11190C] font-semibold my-4">
+              <button
+                ref={secButton}
+                className="bg-[#DAEF15] px-5 py-3 rounded-full text-[#11190C] font-semibold my-4"
+                onClick={handleRegistered}
+              >
                 Join our Waitlist
               </button>
             </div>
           </div>
         </section>
       </main>
+      <footer className="bg-[#0A1718]">
+        <div className="2xl:w-[1200px] lg:w-9/12 md:w-10/12 md:mx-auto mx-5 xs:mx-10 py-7">
+          <div className="flex justify-between mb-10">
+            <Image
+              src={logo}
+              alt="Logo"
+              className="max-w-auto inline-block w-[55px]"
+            />
+            <div className="flex justify-between gap-x-7 text-xs text-[#CFC9BC]">
+              <a href="instagram.com" target="_blank">
+                Instagram
+              </a>
+              <a href="twitter.com" target="_blank">
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div className="text-[#CFC9BC] text-xs">© Furrsible 2023</div>
+        </div>
+      </footer>
+
+      <dialog
+        ref={registerModal}
+        className="min-w-full h-screen max-h-screen overflow-hidden my-0 bg-[#091314] text-white"
+      >
+        <div className="lg:w-3/12 md:w-8/12 w-full mx-auto h-full overflow-y-auto">
+          <header className="w-full flex justify-center items-center py-2">
+            <Image src={logo} alt="Logo" className="inline-block" />
+          </header>
+
+          <button
+            ref={hideModal}
+            onClick={setHideModal}
+            className="absolute right-5 top-5"
+          >
+            <Image src={close} alt="close" />
+          </button>
+
+          <div className="flex justify-center items-center my-20">
+            <div>
+              <h2 className="font-bold text-4xl leading-[-2%] mb-8">
+                Join Our Waitlist
+              </h2>
+              <p className="md:text-lg text-base md:leading-7 leading-6">
+                Submit your contact information below for early access to
+                Furrsible.
+              </p>
+              <form className="my-8" onSubmit={handleRegistered}>
+                <select
+                  className="bg-[#DFE3E7] py-5 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-6"
+                  required
+                >
+                  <option>Pet Owner</option>
+                  <option>Pet Service provider</option>
+                </select>
+                <input
+                  type="email"
+                  className="bg-[#DFE3E7] py-5 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-6"
+                  placeholder="Email Address"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  className="bg-[#DAEF15] px-6 py-4 block mr-0 w-full text-[#11190C] mb-6 rounded-full font-semibold cursor-pointer"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog
+        ref={doneModal}
+        className="lg:w-[531px] mx-auto lg:my-auto lg:rounded-3xl w-full lg:h-[450px] h-screen overflow-hidden my-0 bg-[#091314] text-white done"
+      >
+        <div className="text-right mb-8">
+          <button
+            ref={hideModal}
+            tabIndex={0}
+            onClick={() => {
+              const _modal = doneModal?.current;
+              setTimeout(() => {
+                _modal?.close();
+              }, 500);
+            }}
+          >
+            <Image src={close} alt="close" />
+          </button>
+        </div>
+        <div className="lg:w-9/12 md:w-8/12 w-full mx-auto overflow-y-auto flex flex-col items-center justify-center">
+          <header className="w-full flex justify-center items-center py-2">
+            <Image src={logo} alt="Logo" className="inline-block" />
+          </header>
+
+          <div className="flex flex-col justify-center items-center my-8 text-center">
+            <div className="mb-6">
+              <h2 className="font-bold text-2xl leading-8 mb-2">Thank you!</h2>
+              <p className="text-lg leading-7 text-[#CFC9BC]">
+                You&apos;ll get a notification in your email when we launch. See
+                you then!
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                const _modal = doneModal?.current;
+                setTimeout(() => {
+                  _modal?.close();
+                }, 500);
+              }}
+              className="bg-[#DAEF15] px-12 py-4 mr-0 text-[#11190C] mb-6 rounded-full font-semibold cursor-pointer"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </dialog>
     </>
   );
 }

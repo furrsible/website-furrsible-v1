@@ -36,5 +36,15 @@ html, body {
   }
 }
 
+dialog::backdrop {
+  background-color: #091314;
+}
+
+@media (min-width: 1024px) {
+  dialog.done::backdrop {
+    background-color: rgba(9,19,20,0.7);
+  }
+}
+
 
 @tailwind utilities;
