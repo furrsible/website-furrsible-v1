@@ -26,6 +26,8 @@ export default function Home() {
     userType: `Pet Owner`,
   });
   const [emailError, setEmailError] = useState(``);
+  const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
+  const [animatedDialog, setAnimatedDialog] = useState(`animate__zoomIn`);
 
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -42,14 +44,16 @@ export default function Home() {
 
   const setHideModal = () => {
     const _modal = registerModal?.current;
+    setAnimatedClass(`animate__zoomOut`);
     setTimeout(() => {
       _modal?.close();
-    }, 500);
+    }, 300);
   };
 
   const handleShowModal = () => {
     const _modal = registerModal?.current;
     const _hideModal = hideModal?.current;
+    setAnimatedClass(`animate__zoomIn`);
     _modal?.showModal();
     _hideModal?.focus();
   };
@@ -300,7 +304,7 @@ export default function Home() {
 
       <dialog
         ref={registerModal}
-        className="min-w-full h-screen max-h-screen overflow-hidden my-0 bg-[#091314] text-white"
+        className={`min-w-full h-screen max-h-screen overflow-hidden my-0 bg-[#091314] text-white animate__animated animate__faster ${animatedClass}`}
       >
         <div className="lg:w-3/12 md:w-8/12 w-full mx-auto h-full overflow-y-auto">
           <header className="w-full flex justify-center items-center py-2">
@@ -374,7 +378,7 @@ export default function Home() {
 
       <dialog
         ref={doneModal}
-        className="lg:w-[531px] mx-auto lg:my-auto lg:rounded-3xl w-full lg:h-[450px] h-screen overflow-hidden my-0 bg-[#091314] text-white done"
+        className={`lg:w-[531px] mx-auto lg:my-auto lg:rounded-3xl w-full lg:h-[450px] h-screen overflow-hidden my-0 bg-[#091314] text-white done animate__animated animate__faster ${animatedDialog}`}
       >
         <div className="text-right mb-8">
           <button
@@ -382,9 +386,10 @@ export default function Home() {
             tabIndex={0}
             onClick={() => {
               const _modal = doneModal?.current;
+              setAnimatedDialog(`animate__zoomOut`);
               setTimeout(() => {
                 _modal?.close();
-              }, 500);
+              }, 300);
             }}
           >
             <Image src={close} alt="close" />
@@ -406,9 +411,10 @@ export default function Home() {
             <button
               onClick={() => {
                 const _modal = doneModal?.current;
+                setAnimatedDialog(`animate__zoomOut`);
                 setTimeout(() => {
                   _modal?.close();
-                }, 500);
+                }, 300);
               }}
               className="bg-[#DAEF15] px-12 py-4 mr-0 text-[#11190C] mb-6 rounded-full font-semibold cursor-pointer"
             >
