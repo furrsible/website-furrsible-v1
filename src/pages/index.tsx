@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Header, Image } from '../common/components';
 
 // Images
@@ -21,6 +21,24 @@ export default function Home() {
   const hideModal = useRef<HTMLButtonElement>(null);
   const registerModal = useRef<HTMLDialogElement>(null);
   const doneModal = useRef<HTMLDialogElement>(null);
+  const [formValues, setFormValues] = useState({
+    email: ``,
+    userType: `Pet Owner`,
+  });
+  const [emailError, setEmailError] = useState(``);
+
+  const isValidEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormValues((prev) => ({ ...prev, email: event.target.value }));
+    if (!isValidEmail(event.target.value)) {
+      setEmailError(`Please enter a valid email address`);
+    } else {
+      setEmailError(``);
+    }
+  };
 
   const setHideModal = () => {
     const _modal = registerModal?.current;
@@ -38,11 +56,15 @@ export default function Home() {
 
   const handleRegistered = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const _modal = doneModal.current;
-    setHideModal();
-    setTimeout(() => {
-      _modal?.showModal();
-    }, 500);
+    if (!isValidEmail(formValues.email)) {
+      setEmailError(`Please enter a valid email address`);
+    } else {
+      const _modal = doneModal.current;
+      setHideModal();
+      setTimeout(() => {
+        _modal?.showModal();
+      }, 500);
+    }
   };
 
   useEffect(() => {
@@ -304,18 +326,41 @@ export default function Home() {
               </p>
               <form className="my-8" onSubmit={handleRegistered}>
                 <select
-                  className="bg-[#DFE3E7] py-5 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-6"
+                  className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-9 border-2 border-[#DFE3E7] focus:outline-none  focus:border-sky-500 focus:ring-sky-500"
                   required
+                  value={formValues.userType}
+                  onChange={(e) => {
+                    setFormValues((prev) => ({
+                      ...prev,
+                      userType: e.target.value,
+                    }));
+                  }}
                 >
-                  <option>Pet Owner</option>
-                  <option>Pet Service provider</option>
+                  <option value="Pet Owner">Pet Owner</option>
+                  <option value="Pet Service provider">
+                    Pet Service provider
+                  </option>
                 </select>
-                <input
-                  type="email"
-                  className="bg-[#DFE3E7] py-5 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-6"
-                  placeholder="Email Address"
-                  required
-                />
+                <div className="mb-9 relative input-field">
+                  <input
+                    type="email"
+                    className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-transparent text-[#75808A] border-2 border-[#DFE3E7] focus:outline-none  focus:border-sky-500 focus:ring-sky-500"
+                    value={formValues.email}
+                    onChange={handleEmailChange}
+                    placeholder="Email Address"
+                    required
+                    id="email"
+                    autoFocus
+                  />
+                  <label htmlFor="email" className="text-[#75808A]">
+                    Email Address
+                  </label>
+                  {emailError && (
+                    <p className=" text-red-500 pt-3 text-xs font-light px-3">
+                      {emailError}
+                    </p>
+                  )}
+                </div>
 
                 <input
                   type="submit"
