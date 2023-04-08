@@ -137,7 +137,7 @@ export default function Home() {
             </h2>
             <button
               ref={showModal}
-              className="bg-[#11190C] text-[#DAEF15] px-6 py-4 rounded-full text-base font-semibold"
+              className="bg-[#11190C] text-[#DAEF15] border-2 border-[#DAEF15] px-6 py-4 rounded-full text-base font-semibold transition-colors duration-1000 hover:bg-[#DAEF15] hover:text-[#11190C] hover:border-[#11190C]"
             >
               Join our Waitlist
             </button>
@@ -272,7 +272,7 @@ export default function Home() {
               </h5>
               <button
                 ref={secButton}
-                className="bg-[#DAEF15] px-5 py-3 rounded-full text-[#11190C] font-semibold my-4"
+                className="bg-[#DAEF15] text-[#11190C] border-[#11190C] px-5 py-3 rounded-full font-semibold my-4 transition-colors duration-700 hover:bg-opacity-75 hover:text-[#DAEF15] hover:border-[#DAEF15]"
                 onClick={handleRegistered}
               >
                 Join our Waitlist
@@ -330,7 +330,7 @@ export default function Home() {
               </p>
               <form className="my-8" onSubmit={handleRegistered}>
                 <select
-                  className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-9 border-2 border-[#DFE3E7] focus:outline-none  focus:border-sky-500 focus:ring-sky-500"
+                  className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-[#75808A] text-[#75808A] mb-9 border-2 border-[#DFE3E7] focus:outline-none  focus:border-teal-400 focus:ring-teal-400"
                   required
                   value={formValues.userType}
                   onChange={(e) => {
@@ -348,7 +348,7 @@ export default function Home() {
                 <div className="mb-9 relative input-field">
                   <input
                     type="email"
-                    className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-transparent text-[#75808A] border-2 border-[#DFE3E7] focus:outline-none  focus:border-sky-500 focus:ring-sky-500"
+                    className="bg-[#DFE3E7] py-4 px-4 block mr-0 w-full rounded-xl placeholder:text-transparent text-[#75808A] border-2 border-[#DFE3E7] focus:outline-none  focus:border-teal-400 focus:ring-teal-400"
                     value={formValues.email}
                     onChange={handleEmailChange}
                     placeholder="Email Address"
