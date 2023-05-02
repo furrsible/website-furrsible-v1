@@ -119,12 +119,12 @@ export default function Home() {
         >
           <Image
             src={heroCat}
-            alt="cat looking up"
+            alt=""
             className="absolute bottom-0 right-0 md:w-auto w-20 z-0 rounded-br-3xl"
           />
           <Image
             src={heroDog}
-            alt="dog raising up left paw"
+            alt=""
             className="absolute bottom-0 left-0 md:w-auto w-20 rounded-bl-3xl"
           />
           <div className="xl:w-9/12 md:w-11/12 mx-auto text-center text-[#191B20] xl:py-0 lg:py-5 md:px-0 md:py-0 py-8 px-5">
@@ -160,7 +160,7 @@ export default function Home() {
             <article className="grid md:grid-cols-2 gap-5 bg-[#0A1718] rounded-3xl my-20">
               <Image
                 src={keepTabsImg}
-                alt="someone petting a cat"
+                alt=""
                 className="xl:h-[477px] xl:w-[500px] xl:object-fill h-full object-contain md:rounded-l-3xl md:rounded-t-3xl md:rounded-r-none rounded-b-3xl md:order-first order-last"
               />
 
@@ -191,7 +191,7 @@ export default function Home() {
 
               <Image
                 src={petProviders}
-                alt="vet holding a cat and a thermometer"
+                alt=""
                 className="xl:h-[477px] xl:w-[500px] xl:object-fill h-full object-contain md:rounded-r-3xl md:rounded-t-3xl md:rounded-l-none rounded-b-3xl place-self-end order-last"
               />
             </article>
@@ -199,7 +199,7 @@ export default function Home() {
             <article className="grid md:grid-cols-2 gap-5 bg-[#0A1718] rounded-3xl my-20">
               <Image
                 src={petItems}
-                alt="Pet items on a blue background"
+                alt=""
                 className="xl:h-[477px] xl:w-[500px] xl:object-fill h-full object-contain md:rounded-l-3xl md:rounded-t-3xl md:rounded-r-none rounded-b-3xl md:order-first order-last"
               />
 
@@ -235,7 +235,7 @@ export default function Home() {
 
               <Image
                 src={petSitting}
-                alt="Someone carrying a bunny"
+                alt=""
                 className="xl:h-[477px] xl:w-[500px] xl:object-fill h-full object-contain md:rounded-r-3xl md:rounded-t-3xl md:rounded-l-none rounded-b-3xl place-self-end order-last"
               />
             </article>
@@ -254,12 +254,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex md:gap-x-8 gap-x-4 w-full">
               <div className="flex flex-col md:gap-y-8 gap-y-4 mt-10">
-                <Image src={parrot} alt="parrot" className="rounded-3xl" />
-                <Image src={bigDog} alt="big dog" className="rounded-3xl" />
+                <Image src={parrot} alt="" className="rounded-3xl" />
+                <Image src={bigDog} alt="" className="rounded-3xl" />
               </div>
               <div className="flex flex-col md:gap-y-8 gap-y-4">
-                <Image src={cat} alt="cat" className="rounded-3xl" />
-                <Image src={smallDog} alt="small dog" className="rounded-3xl" />
+                <Image src={cat} alt="" className="rounded-3xl" />
+                <Image src={smallDog} alt="" className="rounded-3xl" />
               </div>
             </div>
             <div className="order-first md:order-last place-self-center">
