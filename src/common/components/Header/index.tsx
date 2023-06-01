@@ -59,56 +59,58 @@ const Header = () => {
         </ul>
       </nav>
       <nav className="md:hidden">
-        <svg
-          width="25"
-          height="20"
-          viewBox="0 0 25 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={`${clicked ? `active` : ``}`}
-          onClick={toggleIcon}
-        >
-          <path
-            d="M2.02539 2.18622H30.6939"
-            stroke="url(#paint0_linear_228_3808)"
-            strokeWidth="2.41096"
-            className="transition-all duration-300"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M2.02539 17.8337H30.6939"
-            stroke="url(#paint1_linear_228_3808)"
-            className="transition-all duration-300"
-            strokeWidth="2.41096"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_228_3808"
-              x1="0.58915"
-              y1="2.14466"
-              x2="0.597939"
-              y2="3.30555"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="white" stopOpacity="0.8" />
-              <stop offset="1" stopColor="white" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_228_3808"
-              x1="0.58915"
-              y1="17.7921"
-              x2="0.597939"
-              y2="18.953"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="white" stopOpacity="0.8" />
-              <stop offset="1" stopColor="white" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <button>
+          <svg
+            width="25"
+            height="20"
+            viewBox="0 0 25 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`${clicked ? `active` : ``}`}
+            onClick={toggleIcon}
+          >
+            <path
+              d="M2.02539 2.18622H30.6939"
+              stroke="url(#paint0_linear_228_3808)"
+              strokeWidth="2.41096"
+              className="transition-all duration-300"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M2.02539 17.8337H30.6939"
+              stroke="url(#paint1_linear_228_3808)"
+              className="transition-all duration-300"
+              strokeWidth="2.41096"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_228_3808"
+                x1="0.58915"
+                y1="2.14466"
+                x2="0.597939"
+                y2="3.30555"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="white" stopOpacity="0.8" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_228_3808"
+                x1="0.58915"
+                y1="17.7921"
+                x2="0.597939"
+                y2="18.953"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="white" stopOpacity="0.8" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
       </nav>
     </header>
   );
