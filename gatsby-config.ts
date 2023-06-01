@@ -12,7 +12,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: `src/common/images/icon.png`,
+        icon: `src/common/images/logo.png`,
       },
     },
     `gatsby-plugin-sharp`,

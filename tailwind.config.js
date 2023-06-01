@@ -7,6 +7,9 @@ module.exports = {
         xs: `375px`,
         '4k': `2560px`,
       },
+      colors: {
+        quartz: `#E4E2F4`,
+      },
     },
   },
   plugins: [],

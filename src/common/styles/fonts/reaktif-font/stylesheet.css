@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Reaktif';
+  src: url('Reaktif-Medium.eot');
+  src: local('Reaktif Medium'), local('Reaktif-Medium'),
+    url('Reaktif-Medium.eot?#iefix') format('embedded-opentype'),
+    url('Reaktif-Medium.woff2') format('woff2'),
+    url('Reaktif-Medium.woff') format('woff'),
+    url('Reaktif-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'Reaktif';
+  src: url('Reaktif-Light.eot');
+  src: local('Reaktif Light'), local('Reaktif-Light'),
+    url('Reaktif-Light.eot?#iefix') format('embedded-opentype'),
+    url('Reaktif-Light.woff2') format('woff2'),
+    url('Reaktif-Light.woff') format('woff'),
+    url('Reaktif-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Reaktif';
+  src: url('Reaktif-Regular.eot');
+  src: local('Reaktif'), local('Reaktif-Regular'),
+    url('Reaktif-Regular.eot?#iefix') format('embedded-opentype'),
+    url('Reaktif-Regular.woff2') format('woff2'),
+    url('Reaktif-Regular.woff') format('woff'),
+    url('Reaktif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
