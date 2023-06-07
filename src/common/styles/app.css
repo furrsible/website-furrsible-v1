@@ -21,7 +21,7 @@ body {
 
 .font-kyiv {
   font-family: 'KyivType',
-    sans-serif;
+    sans-serif !important;
 }
 
 
@@ -68,4 +68,11 @@ body {
 
 .active path:nth-child(2) {
   transform: rotate(-45deg) translate(-10px, 0px);
+}
+
+.furrsound {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 26px;
+  transform: rotate(-2.22deg) matrix(1, -0.04, 0.01, 1, 0, 0);
+  filter: drop-shadow(0px 4px 84px rgba(0, 0, 0, 0.06));
 }
