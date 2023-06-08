@@ -1,5 +1,11 @@
 // import React from 'react';
-import { Header, Link, ArrowRight, Image } from '../common/components';
+import {
+  Header,
+  Link,
+  ArrowRight,
+  Image,
+  Carousel,
+} from '../common/components';
 import heroBg from '../common/images/hero-bg.jpeg';
 import heroGrid from '../common/images/bg-grid.png';
 import petCare from '../common/images/petcare.svg';
@@ -42,6 +48,7 @@ export default function Home() {
               <ArrowRight />
             </Link>
           </div>
+          <Carousel />
         </section>
         <section className="lg:w-4/12 md:w-6/12 md:mx-auto mx-8 my-10 text-xl leading-8 text-[#232931]">
           <h2 className="my-4">
