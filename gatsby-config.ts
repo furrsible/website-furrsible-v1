@@ -3,7 +3,10 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Furrsible`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `Making pet parenting easy! Your one-stop hub for all pet services, right at your fingertips.`,
+    twitterUsername: `@furrsible`,
+    image: `src/common/images/logo.png`,
+    siteUrl: `furrsible.com`,
   },
 
   plugins: [
@@ -12,6 +15,12 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        name: `Furrsible`,
+        short_name: `furrsible`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
         icon: `src/common/images/logo.png`,
       },
     },
