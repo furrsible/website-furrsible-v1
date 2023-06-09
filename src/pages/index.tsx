@@ -174,7 +174,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="bg-[#00373E] text-white md:py-24 py-16">
+      <footer className="bg-[#00373E] text-white py-16">
         <div className="lg:8/12 md:w-9/12 w-11/12 mx-auto">
           <div className="md:flex justify-between items-center border-b border-white border-opacity-[0.1] pb-5">
             <Image src={logo} alt="Logo" className="max-w-auto inline-block" />
@@ -182,7 +182,10 @@ export default function Home() {
             <nav className="">
               <ul className="flex md:flex-row flex-col gap-y-5 gap-x-4 text-sm">
                 <li>
-                  <Link to="https://instagram.com" className="nav-text">
+                  <Link
+                    to="https://www.instagram.com/furr.sible/"
+                    className="nav-text"
+                  >
                     Instagram
                   </Link>
                 </li>
@@ -192,7 +195,10 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://twitter.com" className="nav-text">
+                  <Link
+                    to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
+                    className="nav-text"
+                  >
                     Twitter
                   </Link>
                 </li>

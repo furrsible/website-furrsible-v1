@@ -40,7 +40,10 @@ const Header = () => {
         <nav className="hidden md:block">
           <ul className="flex gap-x-4">
             <li>
-              <Link to="https://instagram.com" className="nav-text">
+              <Link
+                to="https://www.instagram.com/furr.sible/"
+                className="nav-text"
+              >
                 Instagram
               </Link>
             </li>
@@ -50,7 +53,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="https://twitter.com" className="nav-text">
+              <Link
+                to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
+                className="nav-text"
+              >
                 Twitter
               </Link>
             </li>
