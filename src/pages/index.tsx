@@ -50,6 +50,7 @@ export default function Home() {
           </div>
           <Carousel />
         </section>
+
         <section className="lg:w-4/12 md:w-6/12 md:mx-auto mx-8 my-10 text-xl leading-8 text-[#232931]">
           <h2 className="my-4">
             Hey there, hooman! <br /> At Furrsible, we&apos;re crazy about all
@@ -61,6 +62,7 @@ export default function Home() {
             Can&apos;t wait? Us neither!
           </p>
         </section>
+
         <section className="xl:w-7/12 lg:w-8/12 md:w-10/12 md:mx-auto mx-2 md:flex lg:gap-x-10 gap-x-6 mb-24">
           <div className="flex flex-col gap-y-8 md:w-6/12">
             <div className="furrsound text-lg font-light md:w-6/12 text-center py-4">
@@ -133,6 +135,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section className="bg-[#F73859]">
           <div className="md:flex xl:w-8/12 lg:w-10/12  xl:gap-x-5 gap-x-4 items-center lg:mx-auto mx-5 py-10 lg:py-8 xl:py-2">
             <Image
@@ -174,6 +177,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+
       <footer className="bg-[#00373E] text-white py-16">
         <div className="lg:8/12 md:w-9/12 w-11/12 mx-auto">
           <div className="md:flex justify-between items-center border-b border-white border-opacity-[0.1] pb-5">

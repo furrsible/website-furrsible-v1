@@ -125,28 +125,34 @@ const Header = () => {
       {clicked ? (
         <div className="absolute h-screen w-full inset-0 top-[80px] flex items-center justify-center md:hidden">
           <ul
-            className="bg-black flex flex-col gap-y-4 h-full w-full items-center justify-center"
+            className="bg-[#DDEAE4] flex flex-col gap-y-4 h-full w-full items-center justify-center"
             style={{
               clipPath: `polygon(0% 0%, 84% 0%, 50% 100%, 0% 100%)`,
             }}
           >
             <li>
-              <Link to="https://instagram.com" className="nav-text">
+              <Link
+                to="https://www.instagram.com/furr.sible/"
+                className="nav-text-dark"
+              >
                 Instagram
               </Link>
             </li>
             <li>
-              <Link to="https://facebook.com" className="nav-text">
+              <Link to="https://facebook.com" className="nav-text-dark">
                 Facebook
               </Link>
             </li>
             <li>
-              <Link to="https://twitter.com" className="nav-text">
+              <Link
+                to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
+                className="nav-text-dark"
+              >
                 Twitter
               </Link>
             </li>
             <li>
-              <Link to="https://linkedin.com" className="nav-text">
+              <Link to="https://linkedin.com" className="nav-text-dark">
                 Linkedin
               </Link>
             </li>

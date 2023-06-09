@@ -25,8 +25,21 @@ body {
 }
 
 
-.nav-text {
+.nav-text,
+.nav-text-dark {
   background: linear-gradient(152.67deg, rgba(255, 255, 255, 0.8) -4.45%, rgba(255, 255, 255, 0) 114.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  will-change: transform;
+  transition: transform 0.2s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-text-dark {
+  background: linear-gradient(152.67deg, rgba(0, 0, 0, 0.8) -4.45%, rgba(0, 0, 0, 0.3) 114.5%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
