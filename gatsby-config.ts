@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     description: `Making pet parenting easy! Your one-stop hub for all pet services, right at your fingertips.`,
     twitterUsername: `@furrsible`,
     image: `src/common/images/logo.png`,
-    siteUrl: `furrsible.com`,
+    siteUrl: `https://www.furrsible.com`,
   },
 
   plugins: [
