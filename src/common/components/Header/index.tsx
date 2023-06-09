@@ -3,16 +3,18 @@ import Image from '../Image';
 import Link from '../Link';
 import logo from '../../images/logo.svg';
 const Header = () => {
-  const [scrollY, setScrollY] = useState<number | null>(window.scrollY);
+  const [scrollY, setScrollY] = useState<number | null>(0);
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    window.addEventListener(`scroll`, () => {
-      setScrollY(window.scrollY);
-    });
+    if (typeof window !== `undefined`) {
+      window.addEventListener(`scroll`, () => {
+        setScrollY(window.scrollY);
+      });
+    }
 
     return () => {
-      window.removeEventListener(`scroll`, () => {
+      window?.removeEventListener(`scroll`, () => {
         setScrollY(null);
       });
     };
