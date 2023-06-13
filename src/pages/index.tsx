@@ -1,4 +1,4 @@
-// import React from 'react';
+import { useState } from 'react';
 import {
   Header,
   Link,
@@ -6,6 +6,7 @@ import {
   Image,
   Carousel,
 } from '../common/components';
+import { Parallax } from 'react-scroll-parallax';
 import heroBg from '../common/images/hero-bg.jpeg';
 import heroGrid from '../common/images/bg-grid.png';
 import petCare from '../common/images/petcare.svg';
@@ -17,16 +18,24 @@ import logo from '../common/images/logo.svg';
 
 export default function Home() {
   const year = new Date().getFullYear();
+  const [loaded, setLoaded] = useState(false);
   return (
     <>
       <Header />
       <main className="bg-[#F8F6F5]">
         <section
           style={{
+            backgroundColor: `${loaded ? `transparent` : `#00373E`}`,
             backgroundImage: `url(${heroGrid}), url(${heroBg})`,
           }}
           className="min-h-screen bg-blend-color-burn"
         >
+          <img
+            aria-disabled
+            src={heroGrid}
+            onLoad={() => setLoaded(true)}
+            className=" hidden"
+          />
           <div className="text-white lg:w-8/12 md:w-10/12 w-11/12 mx-auto pt-28 flex flex-col md:items-center md:text-center">
             <p className="font-kyiv font-light md:text-[32px] text-xl tracking-[-0.03em]">
               Join the Furrsible Family
@@ -63,78 +72,88 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="xl:w-7/12 lg:w-8/12 md:w-10/12 md:mx-auto mx-2 md:flex lg:gap-x-10 gap-x-6 mb-24">
-          <div className="flex flex-col gap-y-8 md:w-6/12">
-            <div className="furrsound text-lg font-light md:w-6/12 text-center py-4">
-              Woof!!
+        <Parallax
+          // translateX={[`-400px`, `0px`]}
+          scale={[0.85, 1.2]}
+          speed={8}
+          // rotate={[-180, 0]}
+          easing="easeInQuad"
+        >
+          <section className="xl:w-7/12 lg:w-8/12 md:w-10/12 md:mx-auto mx-2 md:flex lg:gap-x-10 gap-x-6 mb-24">
+            <div className="flex flex-col gap-y-8 md:w-6/12">
+              <div className="furrsound text-lg font-light md:w-6/12 text-center py-4">
+                Woof!!
+              </div>
+              <article className="bg-[#FFF0CA] rounded-3xl">
+                <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
+                  <h2 className="font-kyiv font-medium text-4xl mb-4">
+                    Pet Care Services
+                  </h2>
+                  <p className="tracking-[0.34776px] text-[#232931] w-11/12">
+                    Leaving town or need a pet sitter? Furrsible can help! From
+                    grooming to dog walking, we&apos;ve got your pet care needs
+                    covered, so you can enjoy more cuddle time and fewer
+                    worries.
+                  </p>
+                </div>
+                <div className="flex justify-end">
+                  <Image src={petCare} alt="a dog" className="w-24" />
+                </div>
+              </article>
+              <article className="bg-[#E4E2F4] rounded-3xl">
+                <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
+                  <h3 className="font-kyiv font-medium text-4xl mb-4">
+                    Community of Pet Lovers
+                  </h3>
+                  <p className="tracking-[0.34776px] text-[#232931] w-11/12">
+                    They say it takes a village to raise a child - we believe
+                    the same is true for pets. Join our community of pet
+                    parents. Share advice, swap funny pet stories, and set up
+                    play dates.
+                  </p>
+                </div>
+                <div className="flex justify-end px-4">
+                  <Image src={petCommunity} alt="a rabbit" className="w-24" />
+                </div>
+              </article>
             </div>
-            <article className="bg-[#FFF0CA] rounded-3xl">
-              <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
-                <h2 className="font-kyiv font-medium text-4xl mb-4">
-                  Pet Care Services
-                </h2>
-                <p className="tracking-[0.34776px] text-[#232931] w-11/12">
-                  Leaving town or need a pet sitter? Furrsible can help! From
-                  grooming to dog walking, we&apos;ve got your pet care needs
-                  covered, so you can enjoy more cuddle time and fewer worries.
-                </p>
+            <div className="flex flex-col gap-y-8 mt-8 md:w-6/12">
+              <article className="bg-[#FCD6CA] rounded-3xl">
+                <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
+                  <h3 className="font-kyiv font-medium text-4xl mb-4">
+                    Vet Services On-Demand
+                  </h3>
+                  <p className="tracking-[0.34776px] text-[#232931] w-11/12">
+                    Does Mr. Whiskers look under the weather? Our platform
+                    connects you with top-notch vets in a few clicks. It&apos;s
+                    the purr-fect remedy!
+                  </p>
+                </div>
+                <div className="flex justify-end px-4">
+                  <Image src={petVet} alt="a cat" className="w-24" />
+                </div>
+              </article>
+              <article className="bg-[#DDEAE4] rounded-3xl">
+                <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
+                  <h3 className="font-kyiv font-medium text-4xl mb-4">
+                    Shop for your pet with ease
+                  </h3>
+                  <p className="tracking-[0.34776px] text-[#232931] w-11/12">
+                    Running out of pet food or toys? With furrsible, you have
+                    access to a wide range of pet products from trusted
+                    providers, delivered straight to your door.
+                  </p>
+                </div>
+                <div className="flex justify-end px-4">
+                  <Image src={petShop} alt="an owl" className="w-24" />
+                </div>
+              </article>
+              <div className="furrsound text-lg font-light md:w-6/12 text-center py-3 ml-auto">
+                Meow!!
               </div>
-              <div className="flex justify-end">
-                <Image src={petCare} alt="a dog" className="w-24" />
-              </div>
-            </article>
-            <article className="bg-[#E4E2F4] rounded-3xl">
-              <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
-                <h3 className="font-kyiv font-medium text-4xl mb-4">
-                  Community of Pet Lovers
-                </h3>
-                <p className="tracking-[0.34776px] text-[#232931] w-11/12">
-                  They say it takes a village to raise a child - we believe the
-                  same is true for pets. Join our community of pet parents.
-                  Share advice, swap funny pet stories, and set up play dates.
-                </p>
-              </div>
-              <div className="flex justify-end px-4">
-                <Image src={petCommunity} alt="a rabbit" className="w-24" />
-              </div>
-            </article>
-          </div>
-          <div className="flex flex-col gap-y-8 mt-8 md:w-6/12">
-            <article className="bg-[#FCD6CA] rounded-3xl">
-              <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
-                <h3 className="font-kyiv font-medium text-4xl mb-4">
-                  Vet Services On-Demand
-                </h3>
-                <p className="tracking-[0.34776px] text-[#232931] w-11/12">
-                  Does Mr. Whiskers look under the weather? Our platform
-                  connects you with top-notch vets in a few clicks. It&apos;s
-                  the purr-fect remedy!
-                </p>
-              </div>
-              <div className="flex justify-end px-4">
-                <Image src={petVet} alt="a cat" className="w-24" />
-              </div>
-            </article>
-            <article className="bg-[#DDEAE4] rounded-3xl">
-              <div className="lg:px-8 md:px-5 lg:pt-20 md:pt-12 px-3 pt-5">
-                <h3 className="font-kyiv font-medium text-4xl mb-4">
-                  Shop for your pet with ease
-                </h3>
-                <p className="tracking-[0.34776px] text-[#232931] w-11/12">
-                  Running out of pet food or toys? With furrsible, you have
-                  access to a wide range of pet products from trusted providers,
-                  delivered straight to your door.
-                </p>
-              </div>
-              <div className="flex justify-end px-4">
-                <Image src={petShop} alt="an owl" className="w-24" />
-              </div>
-            </article>
-            <div className="furrsound text-lg font-light md:w-6/12 text-center py-3 ml-auto">
-              Meow!!
             </div>
-          </div>
-        </section>
+          </section>
+        </Parallax>
 
         <section className="bg-[#F73859]">
           <div className="md:flex xl:w-8/12 lg:w-10/12  xl:gap-x-5 gap-x-4 items-center lg:mx-auto mx-5 py-10 lg:py-8 xl:py-2">
@@ -193,11 +212,11 @@ export default function Home() {
                     Instagram
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="https://facebook.com" className="nav-text">
                     Facebook
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
@@ -206,11 +225,11 @@ export default function Home() {
                     Twitter
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="https://linkedin.com" className="nav-text">
                     Linkedin
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

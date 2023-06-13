@@ -34,7 +34,7 @@ const Header = () => {
     >
       <div
         className={`transition-all duration-[2000ms] flex justify-between items-center ${
-          scrollY! < 30 ? `opacity-1 visible` : `opacity-0 invisible`
+          scrollY! < 30 ? `opacity-1 visible` : `md:opacity-0 md:invisible`
         }`}
       >
         <Image src={logo} alt="Logo" className="max-w-auto inline-block" />
@@ -49,11 +49,11 @@ const Header = () => {
                 Instagram
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="https://facebook.com" className="nav-text">
                 Facebook
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
@@ -62,11 +62,11 @@ const Header = () => {
                 Twitter
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="https://linkedin.com" className="nav-text">
                 Linkedin
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
         <nav className="md:hidden">
@@ -126,12 +126,7 @@ const Header = () => {
       </div>
       {clicked ? (
         <div className="absolute h-screen w-full inset-0 top-[80px] flex items-center justify-center md:hidden">
-          <ul
-            className="bg-[#DDEAE4] flex flex-col gap-y-4 h-full w-full items-center justify-center"
-            style={{
-              clipPath: `polygon(0% 0%, 84% 0%, 50% 100%, 0% 100%)`,
-            }}
-          >
+          <ul className="bg-[#DDEAE4] flex flex-col gap-y-4 h-full w-full items-center justify-center">
             <li>
               <Link
                 to="https://www.instagram.com/furr.sible/"
@@ -140,11 +135,11 @@ const Header = () => {
                 Instagram
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="https://facebook.com" className="nav-text-dark">
                 Facebook
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="https://twitter.com/furrsible?s=21&t=QUVIDSEhrbtvlzvffUIvUw"
@@ -153,11 +148,11 @@ const Header = () => {
                 Twitter
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="https://linkedin.com" className="nav-text-dark">
                 Linkedin
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       ) : null}
