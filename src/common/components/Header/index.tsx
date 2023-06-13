@@ -70,7 +70,7 @@ const Header = () => {
           </ul>
         </nav>
         <nav className="md:hidden">
-          <button>
+          <button aria-label="menu">
             <svg
               width="25"
               height="20"
