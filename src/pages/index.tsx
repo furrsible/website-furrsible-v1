@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Image,
   Carousel,
+  SEO,
 } from '../common/components';
 import { Parallax } from 'react-scroll-parallax';
 import heroBg from '../common/images/hero-bg.jpeg';
@@ -19,6 +20,7 @@ export default function Home() {
   const year = new Date().getFullYear();
   return (
     <>
+      <SEO />
       <Header />
       <main className="bg-[#F8F6F5]">
         <div className="bg-[#00373E]">

@@ -7,7 +7,9 @@ type ImageType = {
 };
 
 const Image: React.FC<ImageType> = ({ src, alt, className, ...rest }) => {
-  return <img src={src} alt={alt} className={className} {...rest} />;
+  return (
+    <img src={src} alt={alt} className={className} loading="lazy" {...rest} />
+  );
 };
 
 export default Image;
