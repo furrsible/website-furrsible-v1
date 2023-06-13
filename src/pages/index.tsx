@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Header,
   Link,
@@ -18,8 +18,20 @@ import logo from '../common/images/logo.svg';
 
 export default function Home() {
   const year = new Date().getFullYear();
+  const imgEl = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [bgCol, setBgCol] = useState(`#00373E`);
+
+  const onImageLoaded = () => setLoaded(true);
+
+  useEffect(() => {
+    const imgElCurrent = imgEl.current;
+
+    if (imgElCurrent) {
+      imgElCurrent.addEventListener(`load`, onImageLoaded);
+    }
+    return () => imgElCurrent?.removeEventListener(`load`, onImageLoaded);
+  }, [imgEl]);
 
   useEffect(() => {
     if (loaded) {
@@ -42,9 +54,10 @@ export default function Home() {
         >
           <img
             aria-disabled
+            ref={imgEl}
             src={heroGrid}
             onLoad={() => setLoaded(true)}
-            className=" hidden"
+            className="hidden"
           />
           <div className="text-white lg:w-8/12 md:w-10/12 w-11/12 mx-auto pt-28 flex flex-col md:items-center md:text-center">
             <p className="font-kyiv font-light md:text-[32px] text-xl tracking-[-0.03em]">
