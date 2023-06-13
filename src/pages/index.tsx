@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Header,
   Link,
@@ -19,13 +19,23 @@ import logo from '../common/images/logo.svg';
 export default function Home() {
   const year = new Date().getFullYear();
   const [loaded, setLoaded] = useState(false);
+  const [bgCol, setBgCol] = useState(`#00373E`);
+
+  useEffect(() => {
+    if (loaded) {
+      setBgCol(`transparent`);
+    }
+  }, [loaded]);
+
+  console.log({ loaded });
+
   return (
     <>
       <Header />
       <main className="bg-[#F8F6F5]">
         <section
           style={{
-            backgroundColor: `${loaded ? `transparent` : `#00373E`}`,
+            backgroundColor: bgCol,
             backgroundImage: `url(${heroGrid}), url(${heroBg})`,
           }}
           className="min-h-screen bg-blend-color-burn"
