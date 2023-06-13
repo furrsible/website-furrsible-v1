@@ -79,7 +79,7 @@ body {
   animation: typing 3.5s steps(30, end),
     scale 1s;
   animation-fill-mode: forwards;
-  /* animation-delay: 900ms; */
+  animation-delay: 900ms;
 }
 
 @keyframes typing {
