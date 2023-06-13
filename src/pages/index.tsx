@@ -57,7 +57,7 @@ export default function Home() {
             ref={imgEl}
             src={heroGrid}
             onLoad={() => setLoaded(true)}
-            className="hidden"
+            className={`w-1 invisible ${loaded ? `hidden` : `inline`}`}
           />
           <div className="text-white lg:w-8/12 md:w-10/12 w-11/12 mx-auto pt-28 flex flex-col md:items-center md:text-center">
             <p className="font-kyiv font-light md:text-[32px] text-xl tracking-[-0.03em]">
