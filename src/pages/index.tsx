@@ -21,35 +21,37 @@ export default function Home() {
     <>
       <Header />
       <main className="bg-[#F8F6F5]">
-        <section
-          style={{
-            backgroundImage: `url(${heroGrid}), url(${heroBg})`,
-          }}
-          className="min-h-screen bg-blend-color-burn"
-        >
-          <div className="text-white lg:w-8/12 md:w-10/12 w-11/12 mx-auto pt-28 flex flex-col md:items-center md:text-center">
-            <p className="font-kyiv font-light md:text-[32px] text-xl tracking-[-0.03em]">
-              Join the Furrsible Family
-            </p>
-            <h1 className="font-kyiv md:font-bold font-medium md:text-[72px] text-4xl tracking-[-0.03em] md:leading-[86px] leading-[42px] my-8">
-              Your Ultimate Pet Care Solution is{` `}
-              <span className="block header-text">Coming Soon!</span>
-            </h1>
-            <h2 className="md:text-2xl text-xl tracking-[-0.18px] lg:mx-[72px] md:mx-9 md:mb-10 mb-5">
-              We&apos;re busy fetching balls, playing with feathers, and coding
-              up a storm to bring you a tail-wagging pet care platform. Join our
-              waitlist - it&apos;s gonna be paw-sitively amazing!
-            </h2>
-            <Link
-              to="https://forms.gle/iVs3pJ8tSvxUgzoq8"
-              className="flex items-center justify-center gap-x-2 border border-rose-600 bg-rose-600 shadow-sm py-3 px-10 rounded-full"
-            >
-              <span>Join Waitlist</span>
-              <ArrowRight />
-            </Link>
-          </div>
-          <Carousel />
-        </section>
+        <div className="bg-[#00373E]">
+          <section
+            style={{
+              backgroundImage: `url(${heroGrid}), url(${heroBg})`,
+            }}
+            className="min-h-screen bg-blend-color-burn"
+          >
+            <div className="text-white lg:w-8/12 md:w-10/12 w-11/12 mx-auto pt-28 flex flex-col md:items-center md:text-center">
+              <p className="font-kyiv font-light md:text-[32px] text-xl tracking-[-0.03em]">
+                Join the Furrsible Family
+              </p>
+              <h1 className="font-kyiv md:font-bold font-medium md:text-[72px] text-4xl tracking-[-0.03em] md:leading-[86px] leading-[42px] my-8">
+                Your Ultimate Pet Care Solution is{` `}
+                <span className="block header-text">Coming Soon!</span>
+              </h1>
+              <h2 className="md:text-2xl text-xl tracking-[-0.18px] lg:mx-[72px] md:mx-9 md:mb-10 mb-5">
+                We&apos;re busy fetching balls, playing with feathers, and
+                coding up a storm to bring you a tail-wagging pet care platform.
+                Join our waitlist - it&apos;s gonna be paw-sitively amazing!
+              </h2>
+              <Link
+                to="https://forms.gle/iVs3pJ8tSvxUgzoq8"
+                className="flex items-center justify-center gap-x-2 border border-rose-600 bg-rose-600 shadow-sm py-3 px-10 rounded-full"
+              >
+                <span>Join Waitlist</span>
+                <ArrowRight />
+              </Link>
+            </div>
+            <Carousel />
+          </section>
+        </div>
 
         <section className="lg:w-4/12 md:w-6/12 md:mx-auto mx-8 my-10 text-xl leading-8 text-[#232931]">
           <h2 className="my-4">
