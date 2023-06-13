@@ -72,6 +72,38 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  opacity: 0;
+  animation: typing 3.5s steps(30, end),
+    scale 1s;
+  animation-fill-mode: forwards;
+  /* animation-delay: 900ms; */
+}
+
+@keyframes typing {
+  from {
+
+    width: 0;
+    opacity: 1;
+  }
+
+  to {
+
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 

@@ -19,13 +19,14 @@ import logo from '../common/images/logo.svg';
 
 export default function Home() {
   const year = new Date().getFullYear();
+
   return (
     <>
       <Head />
       <SEO />
       <Header />
       <main className="bg-[#F8F6F5]">
-        <div className="bg-[#00373E]">
+        <div className="bg-[#00373E] overflow-hidden">
           <section
             style={{
               backgroundImage: `url(${heroGrid}), url(${heroBg})`,
@@ -40,7 +41,7 @@ export default function Home() {
                 Your Ultimate Pet Care Solution is{` `}
                 <span className="block header-text">Coming Soon!</span>
               </h1>
-              <h2 className="md:text-2xl text-xl tracking-[-0.18px] lg:mx-[72px] md:mx-9 md:mb-10 mb-5">
+              <h2 className="md:text-2xl text-xl tracking-[-0.18px] lg:mx-[72px] md:mx-9 md:mb-10 mb-5 ">
                 We&apos;re busy fetching balls, playing with feathers, and
                 coding up a storm to bring you a tail-wagging pet care platform.
                 Join our waitlist - it&apos;s gonna be paw-sitively amazing!

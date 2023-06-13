@@ -14,7 +14,7 @@ import 'swiper/css/autoplay';
 
 const SimpleSlider = () => {
   return (
-    <div className="text-white mt-16 lg:ml-14">
+    <div className="text-white mt-16 lg:ml-14 animate__animated animate__delay-2s animate__fast animate__slideInUp">
       <Swiper
         modules={[A11y, Autoplay]}
         loop
